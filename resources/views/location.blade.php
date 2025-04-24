@@ -11,6 +11,10 @@
 
 <body>
     <x-navbar></x-navbar>
+    <section class="m-5 flex flex-row items-center gap-5 flex-wrap md:flex-wrap">
+        <h1>Our Location</h1>
+        <p>Jl.Ahmad ausyah maulana</p>
+    </section>
     <x-footer></x-footer>
 </body>
 
