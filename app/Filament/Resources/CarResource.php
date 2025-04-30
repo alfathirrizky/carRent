@@ -19,6 +19,8 @@ class CarResource extends Resource
     protected static ?string $model = Car::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Cars Details';
+    protected static ?string $modelLabel = 'Cars Details';
 
     public static function form(Form $form): Form
     {
@@ -26,19 +28,28 @@ class CarResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                 ->schema([
-                    Forms\Components\TextInput::make('nama_mobil'),
-                    Forms\Components\TextInput::make('durasi'),
-                    Forms\Components\TextInput::make('harga'),
+                    Forms\Components\TextInput::make('nama_mobil')->placeholder('Contoh: Toyota Innova')->label('Nama Mobil')->required(),
+                    Forms\Components\Select::make('durasi')->options([
+                        '12 Jam' => '12 Jam',
+                        '24 Jam' => '24 Jam',
+                        '36 Jam' => '36 Jam',
+                        '48 Jam' => '48 Jam',
+                        '60 Jam' => '60 Jam',
+                        '72 Jam' => '72 Jam'])->placeholder('Pilih Durasi')->required(),
+                    Forms\Components\TextInput::make('harga')->placeholder('Contoh: Rp 1.000.000')->required(),
                     Forms\Components\Select::make('bahan_bakar')->options([
-                    'BENSIN' => 'BENSIN',
-                    'DIESEL' => 'DIESEL']), 
+                    'Bensin' => 'Bensin',
+                    'Diesel' => 'Diesel'])->label('Bahan Bakar')->placeholder('Pilih Bahan Bakar Mobil')->required(), 
                     Forms\Components\Select::make('tipe')->options([
-                    'MATIC' => 'MATIC',
-                    'MANUAL' => 'MANUAL']), 
+                    'Matic' => 'Matic',
+                    'Manual' => 'Manual'])->label('Tipe Mobil')->placeholder('Pilih Tipe Mobil')->required(), 
                     Forms\Components\Select::make('seater')->options([
-                    '5 SEATER' => '5 SEATER',
-                    '7 SEATER' => '7 SEATER']), 
-                    Forms\Components\FileUpload::make('gambar_mobil')
+                    '5 Seater' => '5 Seater',
+                    '7 Seater' => '7 Seater'])->placeholder('Pilih Seater')->required(), 
+                    Forms\Components\Select::make('kategori')->options([
+                    'MPV' => 'MPV',
+                    'SUV' => 'SUV'])->placeholder('Pilih Kategori Mobil')->required(), 
+                    Forms\Components\FileUpload::make('gambar_mobil')->label('Gambar Mobil')->placeholder('Masukkan Gambar Mobil')->required()
                 ])
             ]);
     }
@@ -47,13 +58,14 @@ class CarResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama_mobil'),
+                Tables\Columns\TextColumn::make('nama_mobil')->label('Nama Mobil'),
                 Tables\Columns\TextColumn::make('durasi'),
                 Tables\Columns\TextColumn::make('harga'),
-                Tables\Columns\TextColumn::make('bahan_bakar'),
+                Tables\Columns\TextColumn::make('bahan_bakar')->label('Bahan Bakar'),
                 Tables\Columns\TextColumn::make('tipe'),
                 Tables\Columns\TextColumn::make('seater'),
-                Tables\Columns\ImageColumn::make('gambar_mobil'),
+                Tables\Columns\TextColumn::make('kategori'),
+                Tables\Columns\ImageColumn::make('gambar_mobil')->label('Gambar Mobil'),
             ])
             ->filters([
                 //

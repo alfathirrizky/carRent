@@ -25,8 +25,8 @@ class AdminResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                 ->schema([
-                Forms\Components\TextInput::make('nama'),
-                Forms\Components\TextInput::make('no_telepon'),
+                Forms\Components\TextInput::make('nama')->label('Nama Admin')->placeholder('Isi Nama')->required(),
+                Forms\Components\TextInput::make('no_telepon')->label('Nomor Telepon')->placeholder('Isi Nomor Telepon')->required(),
             ])
         ]);
     }
@@ -35,8 +35,8 @@ class AdminResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama'),
-                Tables\Columns\TextColumn::make('no_telepon'),
+                Tables\Columns\TextColumn::make('nama')->label('Nama Admin'),
+                Tables\Columns\TextColumn::make('no_telepon')->label('Nomor Telepon')
             ])
             ->filters([
                 //
