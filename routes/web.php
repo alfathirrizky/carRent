@@ -14,3 +14,9 @@ Route::get('/location', function () {
 Route::get('/contact us', function () {
     return view('contactUs');
 });
+Route::get('/car detail', function () {
+    return view('carDetail');
+});
+Route::get('/booking', function () {
+    return view('bookingPage');
+});

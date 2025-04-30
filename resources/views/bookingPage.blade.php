@@ -11,11 +11,15 @@
 
 <body>
     <x-navbar></x-navbar>
-    <section class=" flex flex-col items-center">
-        <h1 class=" text-4xl font-bold text-blue-700">Our Location</h1>
-        <p class=" font-medium mb-5">Jl.Ahmad ausyah maulana</p>
-        <div class=" bg-blue-700 w-4xl h-96 mb-7 rounded-2xl"> hai</div>
-        <button type="button" class="text-white w-xl bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">See on map</button>
+    <section class="flex justify-center items-center flex-col gap-5">
+        <h1 class="text-4xl font-bold">Booking</h1>
+        <div class="bookForm rounded-3xl bg-blue-700 w-4xl flex flex-col items-center p-10 gap-5">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <button class=" bg-white px-32 py-1 text-xl font-bold rounded-2xl">Book a car</button>
+        </div>
     </section>
     <x-footer></x-footer>
     <script>

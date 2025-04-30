@@ -11,23 +11,13 @@
 
 <body>
     <x-navbar></x-navbar>
-    <section class="m-5 flex flex-row jsu items-center gap-2 flex-wrap md:flex-wrap">
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
+    <section class="m-5 gap-5 flex-wrap">
+        <div class="list flex gap-2">
+            <x-card></x-card>
+            <x-card></x-card>
+            <x-card></x-card>
+            <x-card></x-card>
+        </div>
     </section>
     <x-footer></x-footer>
 </body>
